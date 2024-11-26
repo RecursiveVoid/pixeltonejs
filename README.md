@@ -3,7 +3,7 @@
 
 **PixelToneJS** is a JavaScript library that converts images into sound based on their RGB data. By interpreting the colors of the image, the library generates corresponding frequencies to create an audio representation of the image.
 
-
+PLEASE NOT THAT THIS LIBRARY IS STILL IN ALPHA VERSION.
 
 ## Features
 - Convert any image to audio
