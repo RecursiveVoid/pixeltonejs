@@ -1,7 +1,8 @@
 import { createCanvas, Image, loadImage } from 'canvas';
 import fs from 'fs';
 import path from 'path';
-import { WaveFile } from 'wavefile';
+import wavefile from 'wavefile';
+const { WaveFile } = wavefile;
 
 interface Options {
   inputImagePath: string;
@@ -57,7 +58,6 @@ export async function processSound(options: Options): Promise<void> {
   const { width, height } = image;
   const metadata = _getMetadataFromImage(inputImagePath);
 
-  console.log(`Processing image: ${metadata.name}, Size: ${metadata.sizeKB} KB`);
 
   const data = _getPixelDataFromImage({ width, height, image });
 
@@ -68,15 +68,10 @@ export async function processSound(options: Options): Promise<void> {
     rgbFrequencyRanges
   );
 
-  console.log('Generating audio samples...');
   const audioSamples = _generateAudioSamples(frequencies, amplitudes, sampleRate, duration);
-
-  console.log('Creating WAV file...');
   const wavBuffer = createWavFile(audioSamples, sampleRate);
 
   fs.writeFileSync(outputAudioPath, wavBuffer);
-
-  console.log(`Audio saved to ${outputAudioPath}`);
 }
 
 function _getMetadataFromImage(inputImagePath: string): ImageMetadata {
@@ -162,7 +157,6 @@ function _generateAudioSamples(
   duration: number
 ): Float32Array {
   const totalSamples = Math.floor(frequencies.length / 3) * Math.floor(sampleRate * duration);
-  console.log(`Total Samples: ${totalSamples}`);
   const audioSamples = new Float32Array(totalSamples);
 
   let sampleIndex = 0;
