@@ -1,6 +1,6 @@
 {
   "name": "pixeltone.js",
-  "version": "0.0.3",
+  "version": "0.0.4-alpha.0",
   "description": "A tool to convert images to audio based on their RGB data.",
   "main": "dist/ImageProcessor.js",
   "types": "dist/ImageProcessor.d.ts",
@@ -8,7 +8,13 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["image", "audio", "image-to-music", "npm-package", "rgb-to-frequency"],
+  "keywords": [
+    "image",
+    "audio",
+    "image-to-music",
+    "npm-package",
+    "rgb-to-frequency"
+  ],
   "author": "M. Ergin Turk",
   "license": "MIT",
   "repository": {
