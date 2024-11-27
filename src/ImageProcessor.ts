@@ -4,7 +4,7 @@ import path from 'path';
 import wavefile from 'wavefile';
 const { WaveFile } = wavefile;
 
-interface Options {
+export interface Options {
   inputImagePath: string;
   outputAudioPath: string;
   sampleRate?: number; // Number of samples per second
@@ -29,13 +29,13 @@ interface RGB {
   b: number;
 }
 
-interface FrequencyOptions {
+export interface FrequencyOptions {
   min: number;
   max: number;
   offset: number;
 }
 
-interface RGBFrequencyRanges {
+export interface RGBFrequencyRanges {
   r: FrequencyOptions,
   g: FrequencyOptions,
   b: FrequencyOptions,
@@ -56,7 +56,7 @@ export async function processSound(options: Options): Promise<void> {
 
   const image = await loadImage(inputImagePath);
   const { width, height } = image;
-  const metadata = _getMetadataFromImage(inputImagePath);
+  const metadata = _getMetadataFromImage(inputImagePath); // leaving for future reference 
 
 
   const data = _getPixelDataFromImage({ width, height, image });

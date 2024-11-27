@@ -22,16 +22,19 @@ npm install pixeltone.js
 
 After installing, you can import and use **PixelToneJS** in your project:
 
-import { processSound } from 'pixeltone.js';
 
-### Example usage
+### Example ESModule usage
 ```typescript
 import { processSound } from 'pixeltone.js';
-
-const options = { inputImagePath: './path/to/image.png', outputAudioPath: './output/audio.wav', sampleRate: 44100, duration: 0.01, };
-
-processSound(options) .then(() => console.log('Audio file created!')) .catch(err => console.error('Error:', err));
+processSound({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
 ```
+
+### Example CommonJS usage
+```typescript
+const { processSound } = require('pixeltone.js');
+processSound({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
+```
+
 ### Options
 - `inputImagePath`: Path to the input image (e.g., `./images/my-image.png`).
 - `outputAudioPath`: Path to save the output audio file (e.g., `./output/audio.wav`).
