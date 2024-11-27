@@ -2,52 +2,23 @@ import { createCanvas, Image, loadImage } from 'canvas';
 import fs from 'fs';
 import path from 'path';
 import wavefile from 'wavefile';
+
+import { ImageData } from './core/types/ImageData';
+import { ImageMetadata } from './core/types/ImageMetadata';
+import { RGBFrequencyRange } from './core/types/RGBFrequencyRange';
+import { PixeltoneOptions } from './core/options/PixeltoneOptions';
+import { RGB } from './core/types/RGB';
+
 const { WaveFile } = wavefile;
 
-export interface Options {
-  inputImagePath: string;
-  outputAudioPath: string;
-  sampleRate?: number; // Number of samples per second
-  duration?: number; // Duration for audio per pixel
-  rgbFrequencyRanges?: RGBFrequencyRanges;
-}
 
-interface ImageMetadata {
-  name: string;
-  sizeKB: number;
-}
-
-interface ImageDataOptions {
-  width: number;
-  height: number;
-  image: Image;
-}
-
-interface RGB {
-  r: number;
-  g: number;
-  b: number;
-}
-
-export interface FrequencyOptions {
-  min: number;
-  max: number;
-  offset: number;
-}
-
-export interface RGBFrequencyRanges {
-  r: FrequencyOptions,
-  g: FrequencyOptions,
-  b: FrequencyOptions,
-}
-
-export async function processSound(options: Options): Promise<void> {
+export async function processSound(options: PixeltoneOptions): Promise<void> {
   const {
     inputImagePath,
     outputAudioPath,
     sampleRate = 44100, // Default sample rate
     duration = 0.01, // Default duration per pixel
-    rgbFrequencyRanges = {
+    rgbFrequencyRange = {
       r: { min: 30.0, max: 500.0, offset: 60.0 },
       g: { min: 500.0, max: 2000.0, offset: 250.0 },
       b: { min: 2000.0, max: 10000.0, offset: 1000.0 },
@@ -65,7 +36,7 @@ export async function processSound(options: Options): Promise<void> {
     data,
     width,
     height,
-    rgbFrequencyRanges
+    rgbFrequencyRange
   );
 
   const audioSamples = _generateAudioSamples(frequencies, amplitudes, sampleRate, duration);
@@ -83,7 +54,7 @@ function _getMetadataFromImage(inputImagePath: string): ImageMetadata {
   };
 }
 
-function _getPixelDataFromImage(options: ImageDataOptions): Uint8ClampedArray {
+function _getPixelDataFromImage(options: ImageData): Uint8ClampedArray {
   const { width, height, image } = options;
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
@@ -109,7 +80,7 @@ function _extractAudioSamplesFromImage(
   data: Uint8ClampedArray,
   width: number,
   height: number,
-  rgbFrequencyRanges: RGBFrequencyRanges,
+  rgbFrequencyRange: RGBFrequencyRange,
 ): { frequencies: number[]; amplitudes: number[] } {
   const frequencies: number[] = [];
   const amplitudes: number[] = [];
@@ -125,21 +96,21 @@ function _extractAudioSamplesFromImage(
 
       const freqR = _mapFrequency(
         rgb.r,
-        rgbFrequencyRanges.r.min,
-        rgbFrequencyRanges.r.max,
-        rgbFrequencyRanges.r.offset
+        rgbFrequencyRange.r.min,
+        rgbFrequencyRange.r.max,
+        rgbFrequencyRange.r.offset
       );
       const freqG = _mapFrequency(
         rgb.g,
-        rgbFrequencyRanges.g.min,
-        rgbFrequencyRanges.g.max,
-        rgbFrequencyRanges.g.offset
+        rgbFrequencyRange.g.min,
+        rgbFrequencyRange.g.max,
+        rgbFrequencyRange.g.offset
       );
       const freqB = _mapFrequency(
         rgb.b,
-        rgbFrequencyRanges.b.min,
-        rgbFrequencyRanges.b.max,
-        rgbFrequencyRanges.b.offset
+        rgbFrequencyRange.b.min,
+        rgbFrequencyRange.b.max,
+        rgbFrequencyRange.b.offset
       );
 
       frequencies.push(freqR, freqG, freqB);
