@@ -1,7 +1,7 @@
 ![](https://i.imgur.com/VGH7kT4.png)
 # PixelToneJS
 
-**PixelToneJS** is a JavaScript library that converts images into sound based on their RGB data. By interpreting the colors of the image, the library generates corresponding frequencies to create an audio representation of the image.
+**PixeltoneJS** is a JavaScript library that converts images into sound based on their RGB data. By interpreting the colors of the image, the library generates corresponding frequencies to create an audio representation of the image.
 
 PLEASE NOT THAT THIS LIBRARY IS STILL IN ALPHA VERSION.
 
@@ -13,14 +13,14 @@ PLEASE NOT THAT THIS LIBRARY IS STILL IN ALPHA VERSION.
 
 ## Installation
 
-To install **PixelToneJS** as an npm package, run:
+To install **PixeltoneJS** as an npm package, run:
 ```bash
 npm install pixeltone.js
 ```
 
 ## Usage
 
-After installing, you can import and use **PixelToneJS** in your project:
+After installing, you can import and use **PixeltoneJS** in your project:
 
 
 ### Example ESModule usage
@@ -52,4 +52,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-If you like [**PixelToneJS**](https://github.com/RecursiveVoid/pixeltonejs), feel free to contribute or leave feedback. You can also star the repository to show your support! 🎶🎨
+If you like [**PixeltoneJS**](https://github.com/RecursiveVoid/pixeltonejs), feel free to contribute or leave feedback. You can also star the repository to show your support! 🎶🎨
