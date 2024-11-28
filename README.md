@@ -3,7 +3,7 @@
 
 **PixeltoneJS** is a JavaScript library that converts images into sound based on their RGB data. By interpreting the colors of the image, the library generates corresponding frequencies to create an audio representation of the image.
 
-PLEASE NOT THAT THIS LIBRARY IS STILL IN ALPHA VERSION.
+**Please note that this library is actively evolving. Continuous improvements are imminent. Please check the logs down below**;
 
 ## Features
 - Convert any image to audio
@@ -25,14 +25,16 @@ After installing, you can import and use **PixeltoneJS** in your project:
 
 ### Example ESModule usage
 ```typescript
-import { processSound } from 'pixeltone.js';
-processSound({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
+import { Pixeltone } from 'pixeltone.js';
+const pixelTone = new Pixeltone();
+pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
 ```
 
 ### Example CommonJS usage
 ```typescript
-const { processSound } = require('pixeltone.js');
-processSound({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
+const { Pixeltone } = require('pixeltone.js');
+const pixelTone = new Pixeltone();
+pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
 ```
 
 ### Options
@@ -44,6 +46,32 @@ processSound({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
 
 ```javascript
 { r: { min: 30, max: 500, offset: 60 }, g: { min: 500, max: 2000, offset: 250 }, b: { min: 2000, max: 10000, offset: 1000 } }
+```
+
+## Change Logs
+
+### 1.0.0: 
+* Major codebase improvement. 
+* Transitioned to an object-oriented approach for better scalability and extensibility.
+* For future planned: Allows users to maintain state and extend functionality through the Pixeltone class.
+
+####  Migration Guide from pre 0.1.1 to post 0.1.1:
+* Replace processSound function imports with Pixeltone class imports.
+* Instantiate a new Pixeltone object using new Pixeltone().
+* Replace processSound calls with pixeltone.createAudioFromImage().
+
+##### Previous API 
+```javascript
+import { processSound } from 'pixeltone.js';
+processSound({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
+```
+
+##### New API 
+```javascript
+import { Pixeltone } from 'pixeltone.js';
+const pixeltone = new Pixeltone();
+pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
+
 ```
 
 ## License
