@@ -26,14 +26,14 @@ After installing, you can import and use **PixeltoneJS** in your project:
 ### Example ESModule usage
 ```typescript
 import { Pixeltone } from 'pixeltone.js';
-const pixelTone = new Pixeltone();
+const pixeltone = new Pixeltone();
 pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
 ```
 
 ### Example CommonJS usage
 ```typescript
 const { Pixeltone } = require('pixeltone.js');
-const pixelTone = new Pixeltone();
+const pixeltone = new Pixeltone();
 pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: 'output.wav' });
 ```
 
