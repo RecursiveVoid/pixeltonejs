@@ -1,6 +1,6 @@
 {
   "name": "pixeltone.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool to convert images to audio based on their RGB data.",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
@@ -17,7 +17,7 @@
     "rgb-to-frequency"
   ],
   "author": "M. Ergin Turk",
-  "license": "MIT",
+  "license": "Custom Attribution-NonCommercial License",
   "repository": {
     "type": "git",
     "url": "https://github.com/RecursiveVoid/pixeltonejs.git"
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "canvas": "^2.11.2",
+    "eventemitter3": "^5.0.1",
     "wavefile": "^11.0.0"
   },
   "type": "module",
