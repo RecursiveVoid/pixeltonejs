@@ -1,5 +1,9 @@
-![](https://i.imgur.com/VGH7kT4.png)
 # PixelToneJS
+![](https://i.imgur.com/VGH7kT4.png)
+
+
+
+[![Discord](https://img.shields.io/discord/1311687163410255882?label=Discord&logo=discord)](https://discord.gg/t9DtvhHnRy) ![npm](https://img.shields.io/npm/v/pixeltone.js) ![Financial Contributors](https://img.shields.io/badge/financial%20contributors-0-yellow)
 
 **PixeltoneJS** is a JavaScript library that converts images into sound based on their RGB data. By interpreting the colors of the image, the library generates corresponding frequencies to create an audio representation of the image.
 
@@ -55,7 +59,7 @@ pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: '
 * Transitioned to an object-oriented approach for better scalability and extensibility.
 * For future planned: Allows users to maintain state and extend functionality through the Pixeltone class.
 
-####  Migration Guide from pre 0.1.1 to post 0.1.1:
+####  Migration Guide from pre v0.1.1 to v1.0:
 * Replace processSound function imports with Pixeltone class imports.
 * Instantiate a new Pixeltone object using new Pixeltone().
 * Replace processSound calls with pixeltone.createAudioFromImage().
