@@ -78,6 +78,15 @@ pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: '
 
 ```
 
+## Example Result
+Example result of the image down below.
+
+ ![](https://i.imgur.com/dnNk5y4.jpeg)  
+ [**Link to Soundcloud**](https://soundcloud.com/turk-m-ergin)
+ 
+
+
+
 ## License
 
 This project is licensed under the Custom Attribution-NonCommercial License - see the [LICENSE](LICENSE) file for details.
