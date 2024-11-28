@@ -76,7 +76,7 @@ pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: '
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Custom Attribution-NonCommercial License - see the [LICENSE](LICENSE) file for details.
 
 ---
 

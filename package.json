@@ -1,6 +1,6 @@
 {
   "name": "pixeltone.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to convert images to audio based on their RGB data.",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
