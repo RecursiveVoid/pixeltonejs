@@ -1,4 +1,4 @@
-export { processSound } from './ImageProcessor';
+export { Pixeltone } from './Pixeltone';
 
 
 export type { PixeltoneOptions } from './core/options/PixeltoneOptions';
