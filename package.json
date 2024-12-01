@@ -1,6 +1,6 @@
 {
   "name": "pixeltone.js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "An auditory creation tool that turns your images into sounds. ",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",

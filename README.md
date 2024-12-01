@@ -1,4 +1,4 @@
-# PixelToneJS
+# PixelToneJS — The Auditory Creation Tool
 ![](https://i.imgur.com/VGH7kT4.png)
 
 
