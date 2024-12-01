@@ -89,8 +89,20 @@ Example result of the image down below.
 
 ## License
 
-This project is licensed under the Custom Attribution-NonCommercial License - see the [LICENSE](LICENSE) file for details.
+Copyright (c) 2024 Mehmet Ergin Turk
+
+Licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
+
+(Twitter/x:  [**@papa_alpha_papa**](https://x.com/papa_alpha_papa)),
+
+(Mastodon:  [**@papa_alpha_papa**](https://mastodon.social/@papa_alpha_papa))
+
+(Bluesky:  [**@erginturk.bsky.social**](https://bsky.app/profile/erginturk.bsky.social)) 
 
 ---
 
-If you like [**PixeltoneJS**](https://github.com/RecursiveVoid/pixeltonejs), feel free to contribute or leave feedback. You can also star the repository to show your support! 🎶🎨
+
+🌟 Love PixeltoneJS? Contribute, leave feedback, or star our [**GitHub repo**](https://github.com/RecursiveVoid/pixeltonejs) to show your support! 🎶🎨
+
+📣  [**Join the conversation in our Discord channel and connect with the community!**](https://discord.gg/t9DtvhHnRy) 🎶🎨
+ 
