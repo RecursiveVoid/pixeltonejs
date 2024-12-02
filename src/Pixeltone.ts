@@ -8,6 +8,9 @@ import { WaveFileFactory } from "./core/factories/WavFileFactory";
 import { FileUtils } from "./core/utils/FileUtils";
 
 
+/**
+ * Pixeltone class provides functionality to generate audio files from image data.
+ */
 class Pixeltone {
 
   private _imageLoader: ImageLoader;
@@ -22,6 +25,32 @@ class Pixeltone {
     this._wavFileFactory = new WaveFileFactory();
   }
 
+   /**
+   * Converts an image into an audio file by mapping pixel data (RGB) to audio frequencies.
+   * 
+   * @param {PixeltoneOptions} options - Configuration options for generating audio.
+   * @param {string} options.inputImagePath - Path to the input image file.
+   * @param {string} options.outputAudioPath - Path where the output audio file will be saved.
+   * @param {number} [options.sampleRate=DEFAULT_SAMPLE_RATE] - The audio sample rate in Hz.
+   * @param {number} [options.duration=DEFAULT_DURATION] - Duration of the each pixel sample in seconds.
+   * @param {number[][]} [options.rgbFrequencyRange=DEFAULT_RGB_FREQUENCY_RANGES] - Frequency range for RGB channels.
+   * 
+   * @returns {Promise<void>} Resolves when the audio file has been successfully created.
+   * 
+   * @example
+   * const pixeltone = new Pixeltone();
+   * await pixeltone.createAudioFromImage({
+   *   inputImagePath: './input.png',
+   *   outputAudioPath: './output.wav',
+   *   sampleRate: 44100,
+   *   duration: 10,
+   *   rgbFrequencyRange: { 
+   *     r: { min: 30, max: 500, offset: 60 }, 
+   *     g: { min: 500, max: 2000, offset: 250 }, 
+   *     b: { min: 2000, max: 10000, offset: 1000 }, 
+   *   }
+   * });
+   */
   public async createAudioFromImage(options: PixeltoneOptions): Promise<void> {
     const {
       inputImagePath,
