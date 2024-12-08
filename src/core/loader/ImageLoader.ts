@@ -1,6 +1,6 @@
-import { Image, loadImage } from "canvas";
+import { Image, loadImage } from 'canvas';
 
-import EventEmitter from "eventemitter3";
+import EventEmitter from 'eventemitter3';
 
 class ImageLoader extends EventEmitter {
   constructor() {

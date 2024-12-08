@@ -1,10 +1,10 @@
-import { RGBFrequencyRange } from "../types/RGBFrequencyRange";
+import { RGBFrequencyRange } from '../types/RGBFrequencyRange';
 
 interface SerialRGBMapperOptions {
-  data: Uint8ClampedArray,
-  width: number,
-  height: number,
-  rgbFrequencyRange: RGBFrequencyRange,
+  data: Uint8ClampedArray;
+  width: number;
+  height: number;
+  rgbFrequencyRange: RGBFrequencyRange;
 }
 
 export { SerialRGBMapperOptions };

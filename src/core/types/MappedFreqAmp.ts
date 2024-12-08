@@ -1,6 +1,6 @@
 interface MappedFreqAmp {
-  frequencies: number[], 
-  amplitudes: number[],
+  frequencies: number[];
+  amplitudes: number[];
 }
 
 export { MappedFreqAmp };

@@ -1,8 +1,8 @@
-import { FrequencyRange } from "../types/FrequencyRange";
+import { FrequencyRange } from '../types/FrequencyRange';
 
 interface FrequencyMapperOptions {
-  value: number,
-  frequencyRange: FrequencyRange,
+  value: number;
+  frequencyRange: FrequencyRange;
 }
 
 export { FrequencyMapperOptions };

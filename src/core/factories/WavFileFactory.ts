@@ -17,8 +17,7 @@ class WaveFileFactory {
     return this._waveFile.toBuffer();
   }
 
-  public destroy(): void {
-  }
+  public destroy(): void {}
 }
 
 export { WaveFileFactory };

@@ -1,5 +1,6 @@
-import { FrequencyMapperOptions } from "../options/FrequencyMapperOptions";
-import { RGB } from "../types/RGB";
+import { FrequencyMapperOptions } from '../options/FrequencyMapperOptions';
+import { SampleFrequencyOptions } from '../options/SampleFrequencyOptions';
+import { RGB } from '../types/RGB';
 
 class MathUtils {
   public static normalizeRGB(rgb: RGB): RGB {
@@ -10,11 +11,22 @@ class MathUtils {
       b: b / 255,
     };
   }
-  
+
   public static mapFrequency(options: FrequencyMapperOptions): number {
     const { value, frequencyRange } = options;
     const { offset, min, max } = frequencyRange;
     return offset + value * (max - min);
+  }
+
+  // TODO also pass the strategy of creating the frequency
+  public static sampleFrequency(options: SampleFrequencyOptions): number {
+    const { rgbAmp, rgbFrequency, time } = options;
+    return (
+      (rgbAmp.r * Math.sin(2 * Math.PI * rgbFrequency.r * time) +
+        rgbAmp.g * Math.sin(2 * Math.PI * rgbFrequency.g * time) +
+        rgbAmp.b * Math.sin(2 * Math.PI * rgbFrequency.b * time)) /
+      3
+    );
   }
 }
 

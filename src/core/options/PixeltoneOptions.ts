@@ -1,9 +1,9 @@
-import { RGBFrequencyRange } from "../types/RGBFrequencyRange";
+import { RGBFrequencyRange } from '../types/RGBFrequencyRange';
 
 interface PixeltoneOptions {
   inputImagePath: string;
   outputAudioPath: string;
-  sampleRate?: number; 
+  sampleRate?: number;
   duration?: number;
   rgbFrequencyRange?: RGBFrequencyRange;
 }
