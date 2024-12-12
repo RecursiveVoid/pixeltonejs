@@ -51,8 +51,20 @@ pixeltone.createAudioFromImage({ inputImagePath: 'input.png', outputAudioPath: '
 ```javascript
 { r: { min: 30, max: 500, offset: 60 }, g: { min: 500, max: 2000, offset: 250 }, b: { min: 2000, max: 10000, offset: 1000 } }
 ```
+## Versioning Structure
+[Major].[Minor].[Patch]-[Version Suffix]
+Version Suffix can be following: 
+* Release candidate (RC) example: 1.1.0-RC0, 1.1.0-RC1 and so on.
+* Main/Dev versioning example: 1.1.0-main.[hash] / 1.1.0-dev.[hash]
+
+## Tagging
+* Latest: Supported up to date releases.
+* Prerelease: Release candidates.
+* Main: Main branch.
+* Dev: Dev branch.
 
 ## Change Logs
+Only major/minor, bug fixes and breaking changes are listed. 
 
 ### 1.0.0: 
 * Major codebase improvement. 
